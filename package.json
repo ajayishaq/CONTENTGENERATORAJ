@@ -1,0 +1,17 @@
+{
+  "name": "ai-tech-news-generator",
+  "version": "1.0.0",
+  "description": "AI-powered tech news blog and social media content generator",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ai",
+    "tech-news",
+    "blog-generator",
+    "content-creation"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
