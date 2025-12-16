@@ -211,4 +211,90 @@ Format the response clearly with headers for each section.`;
                           <Twitter className="w-6 h-6 text-sky-400" />
                           <h2 className="text-xl font-semibold text-white">X/Twitter Thread</h2>
                         </div>
-                        <butto
+                        <button
+                          onClick={() => copyToClipboard(sections?.twitter || '', 'twitter')}
+                          className="flex items-center gap-2 px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors text-sm"
+                        >
+                          <Copy className="w-4 h-4" />
+                          {copiedSection === 'twitter' ? 'Copied!' : 'Copy'}
+                        </button>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4 max-h-96 overflow-y-auto">
+                        <pre className="whitespace-pre-wrap font-sans text-white leading-relaxed text-sm">
+                          {sections?.twitter || 'Twitter thread will appear here'}
+                        </pre>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <Instagram className="w-6 h-6 text-pink-400" />
+                          <h2 className="text-xl font-semibold text-white">Instagram Captions & Hashtags</h2>
+                        </div>
+                        <button
+                          onClick={() => copyToClipboard(sections?.instagram || '', 'instagram')}
+                          className="flex items-center gap-2 px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-lg transition-colors text-sm"
+                        >
+                          <Copy className="w-4 h-4" />
+                          {copiedSection === 'instagram' ? 'Copied!' : 'Copy'}
+                        </button>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4 max-h-96 overflow-y-auto">
+                        <pre className="whitespace-pre-wrap font-sans text-white leading-relaxed text-sm">
+                          {sections?.instagram || 'Instagram captions will appear here'}
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-white/10 backdrop-blur-lg rounded-xl p-12 border border-white/20 flex flex-col items-center justify-center text-center">
+                    <Sparkles className="w-16 h-16 text-purple-400 mb-4 opacity-50" />
+                    <h3 className="text-xl font-semibold text-white mb-2">Ready to Create Content</h3>
+                    <p className="text-purple-200 mb-4">Enter any tech topic above and I'll fetch the latest news and create:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                      <div className="bg-white/5 rounded-lg p-4">
+                        <FileText className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                        <p className="text-white font-medium">SEO Blog Article</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4">
+                        <Twitter className="w-8 h-8 text-sky-400 mx-auto mb-2" />
+                        <p className="text-white font-medium">Twitter Thread</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4">
+                        <Instagram className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                        <p className="text-white font-medium">Instagram Captions</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-6 bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-white mb-3">💡 Quick Tips</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-purple-200">
+                    <div>
+                      <strong className="text-white">Be Specific:</strong> "OpenAI GPT-5" works better than just "AI news"
+                    </div>
+                    <div>
+                      <strong className="text-white">Breaking News:</strong> Search for product launches, updates, announcements
+                    </div>
+                    <div>
+                      <strong className="text-white">Ready to Post:</strong> All content is formatted and optimized for each platform
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<AITechNewsGenerator />);
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
